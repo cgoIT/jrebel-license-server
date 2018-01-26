@@ -1,0 +1,14 @@
+version: '2'
+services:
+  jrebel-license-server:
+    build:
+      context: .
+    ports:
+      - "59000:9000"
+
+    mac_address: 00:11:32:4E:A7:79 #Specify a mac address so you won't have to reactivate each time the container is restarted
+
+    volumes:
+      - /opt/license-server/data:/jrebel/license-server/data
+    image:
+      cgoit/jrebel-license-server:latest
